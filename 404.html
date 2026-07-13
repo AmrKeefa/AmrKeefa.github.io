@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yusr — Open the app</title>
+  <style>
+    body { font-family: -apple-system, system-ui, sans-serif; background:#0f1419; color:#e6edf3;
+           display:flex; min-height:100vh; align-items:center; justify-content:center; margin:0; text-align:center; }
+    .card { max-width:340px; padding:32px 24px; }
+    h1 { font-size:20px; margin:0 0 8px; }
+    p  { opacity:.7; font-size:14px; line-height:1.5; margin:0 0 20px; }
+    a.btn { display:inline-block; background:#2ea043; color:#fff; text-decoration:none;
+            padding:12px 22px; border-radius:10px; font-weight:600; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Open in Yusr 🌙</h1>
+    <p id="msg">If you have the app installed it should have opened automatically. Otherwise, get it below.</p>
+    <a class="btn" id="store" href="#">Get the app</a>
+  </div>
+  <script>
+    // This page is only reached as a FALLBACK: the app was not installed, or the link
+    // was opened in a plain browser. Universal Links / App Links intercept /surah/* on
+    // devices that have the app before this page ever loads.
+    (function () {
+      var ua = navigator.userAgent || "";
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+      var play = "https://play.google.com/store/apps/details?id=com.keefa.wudu";
+      // TODO: replace APPSTORE_ID with the numeric App Store id (e.g. id6499999999).
+      var appStore = "https://apps.apple.com/app/APPSTORE_ID";
+      document.getElementById("store").href = isIOS ? appStore : play;
+    })();
+  </script>
+</body>
+</html>
