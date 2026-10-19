@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["ZTT8C78CVV.com.keefa.wudu"],
+        "appIDs": ["ZTT8C78CVV.com.keefa.wudu.Wudu"],
         "components": [
           { "/": "/surah/*", "comment": "Open a shared surah directly in the Yusr app" }
         ]
