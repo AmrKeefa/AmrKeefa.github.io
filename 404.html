@@ -30,6 +30,15 @@
       var play = "https://play.google.com/store/apps/details?id=com.keefa.wudu";
       var appStore = "https://apps.apple.com/app/id6768202893";
       document.getElementById("store").href = isIOS ? appStore : play;
+      // A group khatma invite: say what it is, and that the link works once Yusr is in.
+      if (location.pathname.indexOf("/khatma/") === 0) {
+        var ar = (navigator.language || "").indexOf("ar") === 0;
+        document.querySelector("h1").textContent = ar ? "دعوة إلى ختمة جماعية 🤲" : "You're invited to a group khatma 🤲";
+        document.getElementById("msg").textContent = ar
+          ? "ثبّت تطبيق يُسر، ثم افتح هذا الرابط مرة أخرى لتنضم إلى الختمة."
+          : "Install Yusr, then open this link again to join the khatma.";
+        document.getElementById("store").textContent = ar ? "حمّل التطبيق" : "Get the app";
+      }
     })();
   </script>
 </body>
