@@ -39,6 +39,15 @@
           : "Install Yusr, then open this link again to join the khatma.";
         document.getElementById("store").textContent = ar ? "حمّل التطبيق" : "Get the app";
       }
+      // A shared azkar category: same idea, the link opens it once Yusr is in.
+      if (location.pathname.indexOf("/azkar/") === 0) {
+        var arAzkar = (navigator.language || "").indexOf("ar") === 0;
+        document.querySelector("h1").textContent = arAzkar ? "أذكار من تطبيق يُسر 🌙" : "Azkar from the Yusr app 🌙";
+        document.getElementById("msg").textContent = arAzkar
+          ? "ثبّت تطبيق يُسر، ثم افتح هذا الرابط مرة أخرى لتصل إلى الأذكار مباشرة."
+          : "Install Yusr, then open this link again to go straight to these azkar.";
+        document.getElementById("store").textContent = arAzkar ? "حمّل التطبيق" : "Get the app";
+      }
     })();
   </script>
 </body>
